@@ -1,0 +1,49 @@
+# Current time Thu Oct 17 13:45:57 2019
+# QuestaSim Stack Trace
+# Program = vsim
+# Id = "10.2b"
+# Version = "2013.05"
+# Date = "May 16 2013"
+# Platform = linux_x86_64
+# 0    0x00000000006fecc1: '<unknown (@0x6fecc1)>'
+# 1    0x00000000006fed7c: '<unknown (@0x6fed7c)>'
+# 2    0x00000000006ff29b: '<unknown (@0x6ff29b)>'
+# 3    0x000000000057a311: '<unknown (@0x57a311)>'
+# 4    0x0000000000be152c: '<unknown (@0xbe152c)>'
+# 5    0x00000000004249b5: '<unknown (@0x4249b5)>'
+# 6    0x00000000005428cd: '<unknown (@0x5428cd)>'
+# 7    0x0000000000543525: '<unknown (@0x543525)>'
+# 8    0x00000000005435e2: '<unknown (@0x5435e2)>'
+# 9    0x00000000007ae7bb: '<unknown (@0x7ae7bb)>'
+# 10   0x00007ffff7bce5d0: '_restore_rt + 0x0' in '/lib64/libpthread.so.0'
+# 11   0x00000000006fecc1: '<unknown (@0x6fecc1)>'
+# 12   0x00000000006fed7c: '<unknown (@0x6fed7c)>'
+# 13   0x00000000006ff29b: '<unknown (@0x6ff29b)>'
+# 14   0x000000000057a311: '<unknown (@0x57a311)>'
+# 15   0x0000000000be152c: '<unknown (@0xbe152c)>'
+# 16   0x00000000004249b5: '<unknown (@0x4249b5)>'
+# 17   0x00000000005428cd: '<unknown (@0x5428cd)>'
+# 18   0x0000000000543525: '<unknown (@0x543525)>'
+# 19   0x00000000005435e2: '<unknown (@0x5435e2)>'
+# 20   0x000000000085bed8: '<unknown (@0x85bed8)>'
+# 21   0x00000000004db735: '<unknown (@0x4db735)>'
+# 22   0x000000000085bdb9: '<unknown (@0x85bdb9)>'
+# 23   0x00007fefed553551: '/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/questa_uvm_pkg-1.2/src/questa-configdb.svh:103'
+# 24   0x00007fefed554ae7: '/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/questa_uvm_pkg-1.2/src/questa-configdb.svh:181'
+# 25   0x00007fefed554e64: '/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/questa_uvm_pkg-1.2/src/questa-configdb.svh:172'
+# 26   0x000000000057d93b: '<unknown (@0x57d93b)>'
+# 27   0x00000000004c3710: '<unknown (@0x4c3710)>'
+# 28   0x0000000000ab3d6a: '<unknown (@0xab3d6a)>'
+# 29   0x0000000000ebdca9: '<unknown (@0xebdca9)>'
+# 30   0x0000000000ebe8f6: '<unknown (@0xebe8f6)>'
+# 31   0x0000000000ebec76: '<unknown (@0xebec76)>'
+# 32   0x0000000000bfc33e: '<unknown (@0xbfc33e)>'
+# 33   0x0000000000f19cc1: '<unknown (@0xf19cc1)>'
+# 34   0x0000000000f63051: '<unknown (@0xf63051)>'
+# 35   0x0000000000f2f77d: '<unknown (@0xf2f77d)>'
+# 36   0x0000000000f2fab5: '<unknown (@0xf2fab5)>'
+# 37   0x0000000000df2696: '<unknown (@0xdf2696)>'
+# 38   0x000000000089d17b: '<unknown (@0x89d17b)>'
+# End of Stack Trace
+
+
