@@ -1,9 +1,9 @@
-class random_sequence extends uvm_sequence #(packet);
-  `uvm_object_utils(random_sequence)
+class random_packet_sequence extends uvm_sequence #(packet);
+  `uvm_object_utils(random_packet_sequence)
   
   packet command;
   
-  function new (string name = "random_sequence");
+  function new (string name = "random_packet_sequence");
     super.new(name);
   endfunction : new
   
@@ -16,4 +16,4 @@ class random_sequence extends uvm_sequence #(packet);
       finish_item(command);
     end : random_loop
   endtask : body
-endclass : random_sequence
+endclass : random_packet_sequence

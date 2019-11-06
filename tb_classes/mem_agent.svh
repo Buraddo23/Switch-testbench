@@ -1,8 +1,8 @@
 class mem_agent extends uvm_agent;
   `uvm_component_utils(mem_agent)
   
-  //packet_sequencer sequencer_h;
-  mem_driver driver_h;
+  mem_sequencer sequencer_h;
+  mem_driver    driver_h;
   //switch_monitor monitor_h;
   
   //uvm_analysis_port #(packet) mon_ap;
@@ -18,8 +18,8 @@ class mem_agent extends uvm_agent;
     if(!uvm_config_db #(mem_agent_config)::get(this, "", "config", agent_config_h))
       `uvm_fatal("AGENT", "Failed to get config")
 
-    //sequencer_h = packet_sequencer::type_id::create("sequencer_h", this);
-    driver_h    = mem_driver      ::type_id::create("driver_h",    this);
+    sequencer_h = mem_sequencer::type_id::create("sequencer_h", this);
+    driver_h    = mem_driver   ::type_id::create("driver_h",    this);
     //monitor_h   = sif_monitor::type_id::create("monitor_h",   this);
     
     uvm_config_db #(virtual mem_if)::set(this, "driver_h*", "vif", agent_config_h.vif);
@@ -28,7 +28,7 @@ class mem_agent extends uvm_agent;
   endfunction : build_phase
   
   function void connect_phase(uvm_phase phase);
-    //driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
+    driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
     //monitor_h.ap.connect(mon_ap);
   endfunction : connect_phase
 endclass : mem_agent

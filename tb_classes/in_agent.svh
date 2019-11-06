@@ -2,7 +2,7 @@ class in_agent extends uvm_agent;
   `uvm_component_utils(in_agent)
   
   packet_sequencer sequencer_h;
-  in_driver driver_h;
+  in_driver        driver_h;
   //switch_monitor monitor_h;
   
   //uvm_analysis_port #(packet) mon_ap;

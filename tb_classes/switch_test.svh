@@ -1,8 +1,9 @@
 class switch_test extends uvm_test;
   `uvm_component_utils(switch_test);
   
-  random_sequence random_h;
-  env             env_h;
+  random_packet_sequence rp_h;
+  random_mem_sequence    rm_h;
+  env                    env_h;
   
   function new (string name, uvm_component parent);
     super.new(name, parent);
@@ -32,13 +33,20 @@ class switch_test extends uvm_test;
     env_config_h = new(vif_mem, vif_in, vif_out[0], vif_out[1], vif_out[2], vif_out[3]);
     uvm_config_db #(env_config)::set(this, "env_h", "config", env_config_h);    
         
-    random_h = random_sequence::type_id::create("random_h", this);
+    rp_h = random_packet_sequence::type_id::create("rp_h", this);
+    rm_h = random_mem_sequence   ::type_id::create("rm_h", this);
     env_h = env::type_id::create("env_h", this);
   endfunction : build_phase
   
+  task configure_phase(uvm_phase phase);
+    phase.raise_objection(this);
+    rm_h.start(env_h.mem_agent_h.sequencer_h);
+    phase.drop_objection(this);
+  endtask : configure_phase
+  
   task main_phase(uvm_phase phase);
     phase.raise_objection(this);
-    random_h.start(env_h.in_agent_h.sequencer_h);
+    rp_h.start(env_h.in_agent_h.sequencer_h);
     phase.drop_objection(this);
   endtask : main_phase
 endclass : switch_test

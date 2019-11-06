@@ -10,13 +10,18 @@ package switch_pkg;
   `include "env_config.svh"
   
   `include "packet.svh"
-  `include "random_sequence.svh"
+  `include "mem_transaction.svh"
+  
+  `include "random_packet_sequence.svh"
+  `include "random_mem_sequence.svh"
   
   typedef uvm_sequencer #(packet) packet_sequencer;  
-  `include "switch_driver.svh"
+  typedef uvm_sequencer #(mem_transaction) mem_sequencer;
+  
   `include "in_driver.svh"
   `include "mem_driver.svh"
   `include "out_driver.svh"
+  
   //`include "switch_monitor.svh"
 
   `include "in_agent.svh"

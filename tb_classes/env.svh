@@ -21,20 +21,23 @@ class env extends uvm_env;
     if(!uvm_config_db #(env_config)::get(this, "", "config", env_config_h))
       `uvm_fatal("ENV", "Failed to get config");
       
-    in_config_h     = new(env_config_h.vif_in);
-    mem_config_h    = new(env_config_h.vif_mem);
-    out_config_h[0] = new(env_config_h.vif_out[0]);
-    /*out_config_h[1] = new(env_config_h.vif_out1);
-    out_config_h[2] = new(env_config_h.vif_out2);
-    out_config_h[3] = new(env_config_h.vif_out3);*/
+    in_config_h = new(env_config_h.vif_in);
+    uvm_config_db #(in_agent_config)::set(this, "in_agent_h", "config", in_config_h);
+    in_agent_h = in_agent::type_id::create("in_agent_h",  this);
     
-    uvm_config_db #(in_agent_config) ::set(this, "in_agent_h*",  "config", in_config_h);
-    uvm_config_db #(mem_agent_config)::set(this, "mem_agent_h*", "config", mem_config_h);
-    uvm_config_db #(out_agent_config)::set(this, "out_agent_h*", "config", out_config_h[0]);
+    mem_config_h = new(env_config_h.vif_mem);
+    uvm_config_db #(mem_agent_config)::set(this, "mem_agent_h", "config", mem_config_h);
+    mem_agent_h = mem_agent::type_id::create("mem_agent_h", this);
     
-    in_agent_h     = in_agent ::type_id::create("in_agent_h",  this);
-    mem_agent_h    = mem_agent::type_id::create("mem_agent_h", this);
-    out_agent_h[0] = out_agent::type_id::create("out_agent_h0", this);
+    for (int i = 0; i < 4; i++) begin
+      string agent_number, agent_name;
+      agent_number.itoa(i);
+      agent_name = {"out_agent_h", agent_number};
+
+      out_config_h[i] = new(env_config_h.vif_out[i]);
+      uvm_config_db #(out_agent_config)::set(this, agent_name, "config", out_config_h[i]);
+      out_agent_h[i] = out_agent::type_id::create(agent_name, this);
+    end
     
     //scoreboard_h = switch_scoreboard::type_id::create("scoreboard_h", this);
     //coverage_h   = switch_coverage  ::type_id::create("coverage_h",   this);

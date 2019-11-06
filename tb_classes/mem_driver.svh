@@ -1,17 +1,27 @@
-class mem_driver extends switch_driver #(virtual mem_if);
+class mem_driver extends uvm_driver #(mem_transaction);
   `uvm_component_utils(mem_driver)
+  
+  virtual mem_if vif;
   
   function new (string name, uvm_component parent);
     super.new(name, parent);
   endfunction : new
   
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if(!uvm_config_db #(virtual mem_if)::get(this, "", "vif", vif))
+      `uvm_fatal("DRIVER", "Failed to get VIF");
+  endfunction : build_phase
+  
   task configure_phase(uvm_phase phase);
     super.configure_phase(phase);
-    phase.raise_objection(this);
-    vif.set_mem_addr(2'b00, 8'he4);
-    vif.set_mem_addr(2'b01, 8'h45);
-    vif.set_mem_addr(2'b10, 8'h23);
-    vif.set_mem_addr(2'b11, 8'h01);
-    phase.drop_objection(this);
+    
+    forever begin
+      mem_transaction cmd;
+      
+      seq_item_port.get_next_item(cmd);
+      vif.set_mem_addr(cmd.port, cmd.address);
+      seq_item_port.item_done();
+    end
   endtask : configure_phase
 endclass : mem_driver
