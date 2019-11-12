@@ -1,20 +1,21 @@
 class packet extends uvm_sequence_item;
-  rand byte da;
-  rand byte sa;
-  rand byte length;
-  rand byte data[];
-       byte fcs;
+  rand bit [7:0] da;
+  rand bit [7:0] sa;
+  rand bit [7:0] length;
+  rand bit [7:0] data[];
+  rand bit [7:0] fcs;
 
   `uvm_object_utils_begin(packet);
-    `uvm_field_int(da, UVM_DEFAULT)
-    `uvm_field_int(sa, UVM_DEFAULT)
-    `uvm_field_int(length, UVM_DEFAULT)
-    `uvm_field_array_int(data, UVM_DEFAULT)
-    `uvm_field_int(fcs, UVM_DEFAULT)
+    `uvm_field_int(da, UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_int(sa, UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_int(length, UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_array_int(data, UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_int(fcs, UVM_ALL_ON|UVM_NOPACK)
   `uvm_object_utils_end
        
   constraint size {
     length == data.size;
+    length == 4;
   }
   
   function new(string name = "");
@@ -41,13 +42,14 @@ class packet extends uvm_sequence_item;
   
   function void do_unpack(uvm_packer packer);
     super.do_unpack(packer);
-    da = packer.unpack_field_int($bits(da));
-    sa = packer.unpack_field_int($bits(sa));
-    length = packer.unpack_field_int($bits(length));
+    da = packer.unpack_field_int(8);
+    sa = packer.unpack_field_int(8);
+    length = packer.unpack_field_int(8);
     data.delete();
     data = new[length];
-    foreach(data[i])
+    for(int i = 0; i < length; i++) begin
       data[i] = packer.unpack_field_int(8);
-    fcs = packer.unpack_field_int($bits(fcs));
+    end
+    fcs = packer.unpack_field_int(8);
   endfunction : do_unpack
 endclass : packet

@@ -26,14 +26,11 @@ interface port_in_if(input bit clk);
     status = cm;
   endtask : set_input
   
-  function logic get_status();
+  function bit get_status();
     return status;
   endfunction : get_status
   
-  function void get_input(output logic [7:0] dat,
-                          output logic       cm
-                         );
-    dat = data;
-    cm  = status;
+  function logic [7:0] get_input();
+    return data;
   endfunction : get_input
 endinterface : port_in_if

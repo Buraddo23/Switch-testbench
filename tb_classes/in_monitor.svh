@@ -1,7 +1,7 @@
-virtual class in_monitor extends uvm_monitor;
+class in_monitor extends uvm_monitor;
   `uvm_component_utils(in_monitor)
   
-  virtual port_in_if bfm;
+  virtual port_in_if vif;
   uvm_analysis_port #(packet) ap;
   
   function new (string name, uvm_component parent);
@@ -15,13 +15,23 @@ virtual class in_monitor extends uvm_monitor;
   endfunction : build_phase
   
   task run_phase(uvm_phase phase);
+    packet pkt;
+  
+    super.run_phase(phase);
+
     forever begin : monitor_block
-      @(vif.get_status);
-      fork
-        get_input();
-      join_none
+      byte unsigned bq[$], bytes[];
+      @(posedge vif.status);
+      while (vif.status) begin
+        bq.push_back(vif.data);
+        @(vif.monitor_cb);
+      end
+      bytes = new[bq.size()] (bq);
+      
+      pkt = packet::type_id::create("pkt");
+      pkt.unpack_bytes(bytes);
+      pkt.print();
+      //ap.write(pkt);
     end
   endtask : run_phase
-  
-  pure virtual task monitor_task();
 endclass : in_monitor

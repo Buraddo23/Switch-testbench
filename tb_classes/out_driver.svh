@@ -15,15 +15,7 @@ class out_driver extends uvm_driver #(packet);
   
   task main_phase(uvm_phase phase);
     super.main_phase(phase);
-    
-    //forever begin : cmd_loop
-      drive(0);
-      vif.wait_for_ready();
-      drive(1);
-    //end : cmd_loop
+
+    vif.set_read(1);
   endtask : main_phase
-  
-  task drive(input logic rd); 
-    vif.set_read(rd);
-  endtask : drive
 endclass : out_driver

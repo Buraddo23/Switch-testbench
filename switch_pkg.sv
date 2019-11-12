@@ -1,8 +1,7 @@
 package switch_pkg;
   import uvm_pkg::*;
   `include "uvm_macros.svh"
-  
-  //`include "sif_monitor_config.svh"
+ 
   `include "agent_config.svh"
   typedef agent_config #(virtual port_in_if)   in_agent_config;
   typedef agent_config #(virtual mem_if)      mem_agent_config;
@@ -22,7 +21,7 @@ package switch_pkg;
   `include "mem_driver.svh"
   `include "out_driver.svh"
   
-  //`include "switch_monitor.svh"
+  `include "in_monitor.svh"
 
   `include "in_agent.svh"
   `include "mem_agent.svh"

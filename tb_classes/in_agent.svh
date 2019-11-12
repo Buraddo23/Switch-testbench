@@ -3,9 +3,9 @@ class in_agent extends uvm_agent;
   
   packet_sequencer sequencer_h;
   in_driver        driver_h;
-  //switch_monitor monitor_h;
+  in_monitor       monitor_h;
   
-  //uvm_analysis_port #(packet) mon_ap;
+  uvm_analysis_port #(packet) mon_ap;
   
   function new (string name, uvm_component parent);
     super.new(name, parent);
@@ -20,11 +20,12 @@ class in_agent extends uvm_agent;
 
     sequencer_h = packet_sequencer::type_id::create("sequencer_h", this);
     driver_h    = in_driver       ::type_id::create("driver_h",    this);
-    //monitor_h   = sif_monitor::type_id::create("monitor_h",   this);
+    monitor_h   = in_monitor      ::type_id::create("monitor_h",   this);
     
-    uvm_config_db #(virtual port_in_if)::set(this, "driver_h*", "vif", agent_config_h.vif);
+    uvm_config_db #(virtual port_in_if)::set(this, "driver_h*",  "vif", agent_config_h.vif);
+    uvm_config_db #(virtual port_in_if)::set(this, "monitor_h*", "vif", agent_config_h.vif);
     
-    //mon_ap = new("mon_ap", this);
+    mon_ap = new("mon_ap", this);
   endfunction : build_phase
   
   function void connect_phase(uvm_phase phase);
