@@ -1,21 +1,20 @@
 class packet extends uvm_sequence_item;
-  rand bit [7:0] da;
-  rand bit [7:0] sa;
-  rand bit [7:0] length;
-  rand bit [7:0] data[];
-  rand bit [7:0] fcs;
+  rand byte da;
+  rand byte sa;
+  rand byte length;
+  rand byte data[];
+  rand byte fcs;
 
-  `uvm_object_utils_begin(packet);
-    `uvm_field_int(da, UVM_ALL_ON|UVM_NOPACK)
-    `uvm_field_int(sa, UVM_ALL_ON|UVM_NOPACK)
-    `uvm_field_int(length, UVM_ALL_ON|UVM_NOPACK)
-    `uvm_field_array_int(data, UVM_ALL_ON|UVM_NOPACK)
-    `uvm_field_int(fcs, UVM_ALL_ON|UVM_NOPACK)
+  `uvm_object_utils_begin(packet)
+    `uvm_field_int      (da,     UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_int      (sa,     UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_int      (length, UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_array_int(data,   UVM_ALL_ON|UVM_NOPACK)
+    `uvm_field_int      (fcs,    UVM_ALL_ON|UVM_NOPACK)
   `uvm_object_utils_end
        
   constraint size {
     length == data.size;
-    length == 4;
   }
   
   function new(string name = "");

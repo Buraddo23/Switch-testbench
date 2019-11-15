@@ -3,9 +3,9 @@ class mem_agent extends uvm_agent;
   
   mem_sequencer sequencer_h;
   mem_driver    driver_h;
-  //switch_monitor monitor_h;
+  mem_monitor   monitor_h;
   
-  //uvm_analysis_port #(packet) mon_ap;
+  uvm_analysis_port #(mem_transaction) mon_ap;
   
   function new (string name, uvm_component parent);
     super.new(name, parent);
@@ -20,11 +20,12 @@ class mem_agent extends uvm_agent;
 
     sequencer_h = mem_sequencer::type_id::create("sequencer_h", this);
     driver_h    = mem_driver   ::type_id::create("driver_h",    this);
-    //monitor_h   = sif_monitor::type_id::create("monitor_h",   this);
+    monitor_h   = mem_monitor  ::type_id::create("monitor_h",   this);
     
     uvm_config_db #(virtual mem_if)::set(this, "driver_h*", "vif", agent_config_h.vif);
+    uvm_config_db #(virtual mem_if)::set(this, "monitor_h*", "vif", agent_config_h.vif);
     
-    //mon_ap = new("mon_ap", this);
+    mon_ap = new("mon_ap", this);
   endfunction : build_phase
   
   function void connect_phase(uvm_phase phase);

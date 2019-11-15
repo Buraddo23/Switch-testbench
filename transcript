@@ -12768,3 +12768,3383 @@ run -all
 #    Time: 250 ps  Iteration: 105  Instance: /top
 # 1
 # Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1094                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1098
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 0 ps  Iteration: 16  Process: /uvm_pkg::uvm_phase::m_run_phases/#FORK#1847_7fefed67326 File: tb_classes/in_agent.svh
+# Fatal error in Function uvm_pkg/uvm_port_base::connect at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_port_base.svh line 431
+# 
+# HDL call sequence:
+# Stopped at tb_classes/in_agent.svh 33 Function uvm_pkg/uvm_port_base::connect
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_common_phases.svh 96 Function uvm_pkg/uvm_connect_phase::exec_func
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_bottomup_phase.svh 108 Function uvm_pkg/uvm_bottomup_phase::execute
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_bottomup_phase.svh 81 Function uvm_pkg/uvm_bottomup_phase::traverse
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_bottomup_phase.svh 61 Function uvm_pkg/uvm_bottomup_phase::traverse
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_bottomup_phase.svh 61 Function uvm_pkg/uvm_bottomup_phase::traverse
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_bottomup_phase.svh 61 Function uvm_pkg/uvm_bottomup_phase::traverse
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_phase.svh 1156 Task uvm_pkg/uvm_phase::execute_phase
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_phase.svh 1847 Task uvm_pkg/uvm_phase::m_run_phases
+# 
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1094                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1098
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# ** Fatal: (SIGSEGV) Bad handle or reference.
+#    Time: 1630 ps  Iteration: 2  Process: /uvm_pkg::uvm_task_phase::execute/#FORK#138(#ublk#215181159#138)_7fefed66e43 File: tb_classes/in_monitor.svh
+# Fatal error in Function uvm_pkg/uvm_analysis_port::write at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/tlm1/uvm_analysis_port.svh line 70
+# 
+# HDL call sequence:
+# Stopped at tb_classes/in_monitor.svh 34 Function uvm_pkg/uvm_analysis_port::write
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_common_phases.svh 245 Task uvm_pkg/uvm_run_phase::exec_task
+# called from  /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_task_phase.svh 150 Function uvm_pkg/uvm_task_phase::execute
+# 
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1094                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1098
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1094                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1098
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Error: tb_classes/mem_agent.svh(6): Invalid type 'mem_monitor'. Please check the type of the variable 'monitor_h'.
+# ** Error: tb_classes/mem_agent.svh(23): (vlog-2730) Undefined variable: 'monitor_h'.
+# ** Error: tb_classes/mem_agent.svh(23): (vlog-2164) Class or package 'mem_monitor' not found.
+# ** Error: tb_classes/mem_agent.svh(23): (vlog-2730) Undefined variable: 'mem_monitor'.
+# ** Error: tb_classes/mem_agent.svh(23): near "::": syntax error, unexpected ::, expecting ';'
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (enable) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (write) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (data) not in 'memory'
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (enable) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (write) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (data) not in 'memory'
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (enable) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (write) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (data) not in 'memory'
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (enable) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (write) not in 'memory'
+# ** Error: tb_classes/in_agent.svh(24): Field/method name (data) not in 'memory'
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Error: tb_classes/mem_monitor.svh(24): Field/method name (enable) not in 'memory'
+# ** Error: tb_classes/mem_monitor.svh(24): Field/method name (write) not in 'memory'
+# ** Error: tb_classes/mem_monitor.svh(24): Field/method name (data) not in 'memory'
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Error: tb_classes/mem_monitor.svh(24): (vlog-2730) Undefined variable: 'enable'.
+# ** Error: tb_classes/mem_monitor.svh(24): (vlog-2730) Undefined variable: 'write'.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/vlog failed.
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1133                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1445
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# A time value could not be extracted from the current line
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1133                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1445
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 0
+# 0
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1133                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1137
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1133                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    70                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1445
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 0
+# 0
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1630 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# 1
+# 1
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1060
+# ------------------------------------
+# 0
+# 0
+# 1
+# 1
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1095
+# ------------------------------------
+# 0
+# 0
+# 1
+# 1
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1108
+# ------------------------------------
+# 0
+# 0
+# 1
+# 1
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1120
+# ------------------------------------
+# 0
+# 0
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1149                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    150                                           
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# 0
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1461
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 0
+# 0
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1710 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1149                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    150                                           
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1461
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1710 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# ** Error: (vsim-8268) tb_classes/mem_driver.svh(23): No Default value for formal 'dat' in task/function set_mem_addr.
+#         Region: /switch_pkg::mem_driver
+# ** Error: (vsim-8268) tb_classes/mem_driver.svh(23): No Default value for formal 'addr' in task/function set_mem_addr.
+#         Region: /switch_pkg::mem_driver
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# Error loading design
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Loading work.binding_module
+# Loading work.mem_if
+# Loading work.port_in_if
+# Loading work.port_out_if
+# ** Error: (vsim-8268) tb_classes/mem_driver.svh(23): No Default value for formal 'dat' in task/function set_mem_addr.
+#         Region: /switch_pkg::mem_driver
+# ** Error: (vsim-8268) tb_classes/mem_driver.svh(23): No Default value for formal 'addr' in task/function set_mem_addr.
+#         Region: /switch_pkg::mem_driver
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# Error loading design
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1060
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1091
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1100
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1108
+# ------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1141                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    90                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1453
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1650 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1060
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1091
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1100
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1108
+# ------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1141                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    90                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1453
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1650 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1060
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1091
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1100
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1108
+# ------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1141                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    90                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1453
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1650 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1060
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1091
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1100
+# ------------------------------------
+# ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# memory  mem_transaction  -     @1108
+# ------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1141                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    90                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1453
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1650 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# --------------------------------------
+# Name      Type             Size  Value
+# --------------------------------------
+# memory    mem_transaction  -     @1060
+#   enable  integral         1     'h1  
+#   write   integral         1     'h1  
+#   enable  integral         1     'h1  
+#   enable  integral         1     'h1  
+# --------------------------------------
+# --------------------------------------
+# Name      Type             Size  Value
+# --------------------------------------
+# memory    mem_transaction  -     @1091
+#   enable  integral         1     'h1  
+#   write   integral         1     'h1  
+#   enable  integral         1     'h1  
+#   enable  integral         1     'h1  
+# --------------------------------------
+# --------------------------------------
+# Name      Type             Size  Value
+# --------------------------------------
+# memory    mem_transaction  -     @1100
+#   enable  integral         1     'h1  
+#   write   integral         1     'h1  
+#   enable  integral         1     'h1  
+#   enable  integral         1     'h1  
+# --------------------------------------
+# --------------------------------------
+# Name      Type             Size  Value
+# --------------------------------------
+# memory    mem_transaction  -     @1108
+#   enable  integral         1     'h1  
+#   write   integral         1     'h1  
+#   enable  integral         1     'h1  
+#   enable  integral         1     'h1  
+# --------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1141                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    90                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1453
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1650 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+vlog -f tb.f
+# QuestaSim-64 vlog 10.2b Compiler 2013.05 May 16 2013
+# -- Compiling package switch_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) Using implicit +incdir+/home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# ** Warning: tb_classes/in_monitor.svh(32): (vlog-2240) Treating stand-alone use of function 'unpack_bytes' as an implicit VOID cast.
+# ** Warning: tb_classes/in_driver.svh(29): (vlog-2240) Treating stand-alone use of function 'pack_bytes' as an implicit VOID cast.
+# -- Compiling interface mem_if
+# -- Compiling interface port_in_if
+# -- Compiling interface port_out_if
+# -- Compiling package top_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package switch_pkg
+# -- Compiling module binding_module
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+vsim -novopt top +UVM_TESTNAME=switch_test
+# vsim +UVM_TESTNAME=switch_test -novopt top 
+# Refreshing /home/vlads/Work/switch tb/work.top
+# Refreshing /home/vlads/Work/switch tb/work.top_sv_unit
+# Refreshing /home/vlads/Work/switch tb/work.switch_pkg
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.switch_pkg
+# Loading work.top_sv_unit
+# Loading work.top
+# Loading work.switch
+# Loading work.fifo
+# Loading work.port_fsm
+# Loading mtiUvm.questa_uvm_pkg
+# Refreshing /home/vlads/Work/switch tb/work.binding_module
+# Loading work.binding_module
+# Refreshing /home/vlads/Work/switch tb/work.mem_if
+# Loading work.mem_if
+# Refreshing /home/vlads/Work/switch tb/work.port_in_if
+# Loading work.port_in_if
+# Refreshing /home/vlads/Work/switch tb/work.port_out_if
+# Loading work.port_out_if
+# Loading /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+add wave -position insertpoint  \
+sim:/top/tb_clk \
+sim:/top/tb_reset \
+sim:/top/tb_data_status \
+sim:/top/tb_data \
+sim:/top/tb_mem_en \
+sim:/top/tb_mem_rd_wr \
+sim:/top/tb_mem_add \
+sim:/top/tb_mem_data \
+sim:/top/tb_port0 \
+sim:/top/tb_port1 \
+sim:/top/tb_port2 \
+sim:/top/tb_port3 \
+sim:/top/tb_ready_0 \
+sim:/top/tb_ready_1 \
+sim:/top/tb_ready_2 \
+sim:/top/tb_ready_3 \
+sim:/top/tb_read_0 \
+sim:/top/tb_read_1 \
+sim:/top/tb_read_2 \
+sim:/top/tb_read_3
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test switch_test...
+# ---------------------------------------
+# Name       Type             Size  Value
+# ---------------------------------------
+# memory     mem_transaction  -     @1060
+#   enable   integral         1     'h1  
+#   write    integral         1     'h1  
+#   port     integral         2     'h0  
+#   address  integral         8     'hc1 
+# ---------------------------------------
+# ---------------------------------------
+# Name       Type             Size  Value
+# ---------------------------------------
+# memory     mem_transaction  -     @1091
+#   enable   integral         1     'h1  
+#   write    integral         1     'h1  
+#   port     integral         2     'h1  
+#   address  integral         8     'he6 
+# ---------------------------------------
+# ---------------------------------------
+# Name       Type             Size  Value
+# ---------------------------------------
+# memory     mem_transaction  -     @1100
+#   enable   integral         1     'h1  
+#   write    integral         1     'h1  
+#   port     integral         2     'h2  
+#   address  integral         8     'h3c 
+# ---------------------------------------
+# ---------------------------------------
+# Name       Type             Size  Value
+# ---------------------------------------
+# memory     mem_transaction  -     @1108
+#   enable   integral         1     'h1  
+#   write    integral         1     'h1  
+#   port     integral         2     'h3  
+#   address  integral         8     'hcc 
+# ---------------------------------------
+# -------------------------------------------------------------------------------------------------
+# Name                           Type          Size  Value                                         
+# -------------------------------------------------------------------------------------------------
+# command                        packet        -     @1141                                         
+#   da                           integral      8     'h11                                          
+#   sa                           integral      8     'h2e                                          
+#   length                       integral      8     'h49                                          
+#   data                         da(integral)  73    -                                             
+#     [0]                        integral      8     'h78                                          
+#     [1]                        integral      8     'hac                                          
+#     [2]                        integral      8     'h29                                          
+#     [3]                        integral      8     'h81                                          
+#     [4]                        integral      8     'h78                                          
+#     ...                        ...           ...   ...                                           
+#     [68]                       integral      8     'h5a                                          
+#     [69]                       integral      8     'h5e                                          
+#     [70]                       integral      8     'hc9                                          
+#     [71]                       integral      8     'h7b                                          
+#     [72]                       integral      8     'h53                                          
+#   fcs                          integral      8     'h2e                                          
+#   begin_time                   time          64    90                                            
+#   depth                        int           32    'd2                                           
+#   parent sequence (name)       string        4     rp_h                                          
+#   parent sequence (full name)  string        46    uvm_test_top.env_h.in_agent_h.sequencer_h.rp_h
+#   sequencer                    string        41    uvm_test_top.env_h.in_agent_h.sequencer_h     
+# -------------------------------------------------------------------------------------------------
+# -----------------------------------
+# Name      Type          Size  Value
+# -----------------------------------
+# pkt       packet        -     @1453
+#   da      integral      8     'h11 
+#   sa      integral      8     'h2e 
+#   length  integral      8     'h49 
+#   data    da(integral)  73    -    
+#     [0]   integral      8     'h78 
+#     [1]   integral      8     'hac 
+#     [2]   integral      8     'h29 
+#     [3]   integral      8     'h81 
+#     [4]   integral      8     'h78 
+#     ...   ...           ...   ...  
+#     [68]  integral      8     'h5a 
+#     [69]  integral      8     'h5e 
+#     [70]  integral      8     'hc9 
+#     [71]  integral      8     'h7b 
+#     [72]  integral      8     'h53 
+#   fcs     integral      8     'h2e 
+# -----------------------------------
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# ** Note: $finish    : /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1650 ps  Iteration: 105  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /home/vlad/tools/eda/mentor/questasim-10.2b_x64/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430

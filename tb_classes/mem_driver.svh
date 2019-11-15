@@ -20,7 +20,7 @@ class mem_driver extends uvm_driver #(mem_transaction);
       mem_transaction cmd;
       
       seq_item_port.get_next_item(cmd);
-      vif.set_mem_addr(cmd.port, cmd.address);
+      vif.set_mem_addr(cmd.enable, cmd.write, cmd.port, cmd.address);
       seq_item_port.item_done();
     end
   endtask : configure_phase
