@@ -23,6 +23,7 @@ package switch_pkg;
   
   `include "in_monitor.svh"
   `include "mem_monitor.svh"
+  `include "out_monitor.svh"
 
   `include "in_agent.svh"
   `include "mem_agent.svh"

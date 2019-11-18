@@ -15,16 +15,6 @@ interface port_out_if(input bit clk);
     input read;
   endclocking : monitor_cb
   
-  task wait_for_ready();
-    @(ready);
-  endtask : wait_for_ready
-  
-  task get_data(output logic [7:0] dat);
-    while (read && ready) begin
-      dat = monitor_cb.data;
-    end
-  endtask : get_data
-  
   task set_read(input logic rd);
     driver_cb.read <= rd;
   endtask : set_read

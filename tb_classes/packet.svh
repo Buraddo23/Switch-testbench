@@ -15,6 +15,7 @@ class packet extends uvm_sequence_item;
        
   constraint size {
     length == data.size;
+    da == 8'hc1;
   }
   
   function new(string name = "");
