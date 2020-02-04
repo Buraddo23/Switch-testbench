@@ -17,6 +17,10 @@ package switch_pkg;
   typedef uvm_sequencer #(packet) packet_sequencer;  
   typedef uvm_sequencer #(mem_transaction) mem_sequencer;
   
+  `include "virtual_sequence_base.svh"
+  `include "virtual_random_sequence.svh"
+  `include "virtual_sequence_mem_reconfig.svh"
+  
   `include "in_driver.svh"
   `include "mem_driver.svh"
   `include "out_driver.svh"
@@ -28,9 +32,11 @@ package switch_pkg;
   `include "in_agent.svh"
   `include "mem_agent.svh"
   `include "out_agent.svh"
-  //`include "scoreboard.svh"
+  `include "scoreboard.svh"
   //`include "coverage.svh"
   `include "env.svh"
   
   `include "switch_test.svh"
+  `include "random_test.svh"
+  `include "reconfig_test.svh"
 endpackage : switch_pkg

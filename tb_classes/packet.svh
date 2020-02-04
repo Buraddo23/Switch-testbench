@@ -4,6 +4,7 @@ class packet extends uvm_sequence_item;
   rand byte length;
   rand byte data[];
   rand byte fcs;
+  rand int  idle;
 
   `uvm_object_utils_begin(packet)
     `uvm_field_int      (da,     UVM_ALL_ON|UVM_NOPACK)
@@ -15,7 +16,10 @@ class packet extends uvm_sequence_item;
        
   constraint size {
     length == data.size;
-    da == 8'hc1;
+  }
+  
+  constraint idle_time {
+    idle inside {[2:5]};
   }
   
   function new(string name = "");
@@ -52,4 +56,8 @@ class packet extends uvm_sequence_item;
     end
     fcs = packer.unpack_field_int(8);
   endfunction : do_unpack
+  
+  function string convert2string();
+    return sprint();
+  endfunction
 endclass : packet

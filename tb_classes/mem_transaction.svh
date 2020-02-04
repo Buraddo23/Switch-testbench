@@ -13,4 +13,8 @@ class mem_transaction extends uvm_sequence_item;
   function new(string name = "");
     super.new(name);
   endfunction : new
+  
+  function string convert2string();
+    return sprint();
+  endfunction
 endclass : mem_transaction

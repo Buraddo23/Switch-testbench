@@ -27,6 +27,6 @@ class out_agent extends uvm_agent;
   endfunction : build_phase
   
   function void connect_phase(uvm_phase phase);
-    //monitor_h.ap.connect(mon_ap);
+    monitor_h.ap.connect(mon_ap);
   endfunction : connect_phase
 endclass : out_agent

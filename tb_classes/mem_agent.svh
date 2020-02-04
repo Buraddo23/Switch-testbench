@@ -22,7 +22,7 @@ class mem_agent extends uvm_agent;
     driver_h    = mem_driver   ::type_id::create("driver_h",    this);
     monitor_h   = mem_monitor  ::type_id::create("monitor_h",   this);
     
-    uvm_config_db #(virtual mem_if)::set(this, "driver_h*", "vif", agent_config_h.vif);
+    uvm_config_db #(virtual mem_if)::set(this, "driver_h*", "vif",  agent_config_h.vif);
     uvm_config_db #(virtual mem_if)::set(this, "monitor_h*", "vif", agent_config_h.vif);
     
     mon_ap = new("mon_ap", this);
@@ -30,6 +30,6 @@ class mem_agent extends uvm_agent;
   
   function void connect_phase(uvm_phase phase);
     driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
-    //monitor_h.ap.connect(mon_ap);
+    monitor_h.ap.connect(mon_ap);
   endfunction : connect_phase
 endclass : mem_agent

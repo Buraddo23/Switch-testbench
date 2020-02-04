@@ -11,7 +11,9 @@ class out_monitor extends uvm_monitor;
   function void build_phase (uvm_phase phase);
     super.build_phase(phase);    
     if (!uvm_config_db #(virtual port_out_if)::get(this, "", "vif", vif))
-      `uvm_fatal("MONITOR", "Failed to get VIF");
+      `uvm_fatal("OUTPUT MONITOR", "Failed to get VIF");
+    
+    ap = new("ap", this);
   endfunction : build_phase
   
   task main_phase(uvm_phase phase);
@@ -34,8 +36,8 @@ class out_monitor extends uvm_monitor;
         
         pkt = packet::type_id::create("pkt");
         pkt.unpack_bytes(bytes);
-        pkt.print();
-        //ap.write(pkt);
+        `uvm_info("OUTPUT MONITOR", {"Monitored packet: ", pkt.convert2string()}, UVM_HIGH);
+        ap.write(pkt);
       end
       phase.drop_objection(this);
     end

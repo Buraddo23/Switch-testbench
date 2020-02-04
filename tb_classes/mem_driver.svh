@@ -13,8 +13,8 @@ class mem_driver extends uvm_driver #(mem_transaction);
       `uvm_fatal("DRIVER", "Failed to get VIF");
   endfunction : build_phase
   
-  task configure_phase(uvm_phase phase);
-    super.configure_phase(phase);
+  task run_phase(uvm_phase phase);
+    super.run_phase(phase);
     
     forever begin
       mem_transaction cmd;
@@ -23,5 +23,5 @@ class mem_driver extends uvm_driver #(mem_transaction);
       vif.set_mem_addr(cmd.enable, cmd.write, cmd.port, cmd.address);
       seq_item_port.item_done();
     end
-  endtask : configure_phase
+  endtask : run_phase
 endclass : mem_driver

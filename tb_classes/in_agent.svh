@@ -30,6 +30,6 @@ class in_agent extends uvm_agent;
   
   function void connect_phase(uvm_phase phase);
     driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
-    //monitor_h.ap.connect(mon_ap);
+    monitor_h.ap.connect(mon_ap);
   endfunction : connect_phase
 endclass : in_agent

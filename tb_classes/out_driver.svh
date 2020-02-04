@@ -13,9 +13,11 @@ class out_driver extends uvm_driver #(packet);
       `uvm_fatal("DRIVER", "Failed to get VIF");
   endfunction : build_phase
   
-  task main_phase(uvm_phase phase);
+  task run_phase(uvm_phase phase);
     super.main_phase(phase);
 
+    @(vif.driver_cb);
+    @(vif.driver_cb);
     vif.set_read(1);
-  endtask : main_phase
+  endtask : run_phase
 endclass : out_driver
